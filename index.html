@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra con HTML5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+    <div id="paintbg">
+        <p id="title">Pizarra HTML5</p>
+        <div id="colorpanel">            
+            <center><p>Colores</p></center>
+            <div id="contain">
+                <div class="palette red" id="red" onclick="changeColors(this)"></div>
+                <div class="palette red1" id="red1" onclick="changeColors(this)"></div>
+                <div class="palette red2" id="red2" onclick="changeColors(this)"></div>
+                <div class="palette orange" id="orange" onclick="changeColors(this)"></div>
+                <div class="palette orange1" id="orange1" onclick="changeColors(this)"></div>
+                <div class="palette orange2" id="orange2" onclick="changeColors(this)"></div>
+                <div class="palette yellow" id="yellow" onclick="changeColors(this)"></div>
+                <div class="palette yellow1" id="yellow1" onclick="changeColors(this)"></div>
+                <div class="palette yellow2" id="yellow2" onclick="changeColors(this)"></div>
+                <div class="palette green" id="green" onclick="changeColors(this)"></div>
+                <div class="palette green1" id="green1" onclick="changeColors(this)"></div>
+                <div class="palette green2" id="green2" onclick="changeColors(this)"></div>
+                <div class="palette blue" id="blue" onclick="changeColors(this)"></div>
+                <div class="palette blue1" id="blue1" onclick="changeColors(this)"></div>
+                <div class="palette blue2" id="blue2" onclick="changeColors(this)"></div>
+                <div class="palette indigo" id="indigo" onclick="changeColors(this)"></div>
+                <div class="palette indigo1" id="indigo1" onclick="changeColors(this)"></div>
+                <div class="palette indigo2" id="indigo2" onclick="changeColors(this)"></div>
+                <div class="palette purple" id="purple" onclick="changeColors(this)"></div>
+                <div class="palette purple1" id="purple1" onclick="changeColors(this)"></div>
+                <div class="palette purple2" id="purple2" onclick="changeColors(this)"></div>
+                <div class="palette black" id="black" onclick="changeColors(this)"></div>
+                <div class="palette black1" id="black1" onclick="changeColors(this)"></div>
+                <div class="palette black2" id="black2" onclick="changeColors(this)"></div>
+            </div>
+            <br>
+            <br>
+            <div id="erasing"><center><p>Borrar</p></center></div>
+            <div class="palette white" id="erase" onclick="changeColors(this)"></div>
+            </div>
+            
+            <div id="canvasarea">
+                <canvas id="myCanvas" width="700" height="500" style="border:1.5px solid #000000;"></canvas>
+            </div>
+            <div id="linepanel">
+                <center><p>Ancho del pincel</p></center>
+                <center>
+                    <form>
+                        <input type="range" name="amountRange" id="myRange" value="1" min="1" max="50" oninput="this.form.amountInput.value=this.value" onclick="lineWidthRange()">
+                        <div id="sliderInput">
+                            <input type="number" name="amountInput" value="1" min="1" max="50" oninput="this.form.amountRange.value=this.value">
+                        </div>
+                    </form>
+                </center>
+                <center>
+                    <p>Estilo de pincel</p>
+                </center>
+                <center>
+                    <input type="button" value="Round" id="round" onclick="lines();changeBrushStyle(this);"><br>
+                    <input type="button" value="Square" id="square" onclick="lines();changeBrushStyle(this);"><br>
+                    <input type="button" value="Rough" id="rough" onclick="lines();changeBrushStyle(this);"><br>
+                    <center><p>Formas</p></center>
+                    <div class="shapes shaperectangle" id="shaperectangle" onclick="rectangle()"></div>
+                    <div class="shape shapetriangle" id="shapetriangle" onclick="triangle()"></div>
+                </center>                              
+            </div>
+            <div id="space">
+                <div id="space">
+                    <button class="button" onclick="erase()">Borrar</button>
+                    <button class="button"><a href="#" id="dwnld" download="dibujo.png">Guardar</a></button>
+                </div>  
+            </div>
+        
+    </div>
+    <script type="text/javascript" src="./js/script.js">
+      alert();
+    </script>
+</body>
+</html>
